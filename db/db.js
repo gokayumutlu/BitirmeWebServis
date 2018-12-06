@@ -12,7 +12,7 @@ const pool=mysql.createPool({
 
 
 
-console.log("asdqwe");
+console.log("db");
 
 
 

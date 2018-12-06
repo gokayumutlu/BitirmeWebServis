@@ -35,6 +35,6 @@ router.post("/",(req,res)=>{
 
 
 
-console.log("qweasd");
+console.log("signUp");
 
 module.exports=router;

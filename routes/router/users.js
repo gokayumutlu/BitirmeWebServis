@@ -34,9 +34,9 @@ router.get("/ogretmen",(req,res)=>{
     })
 });
 
-console.log("qweasd");
-const dt=dateTime.create();
-const formattedDT=dt.format("y/m/d");
-console.log(formattedDT);
+console.log("users");
+//const dt=dateTime.create();
+//const formattedDT=dt.format("y/m/d");
+//console.log(formattedDT);
 
 module.exports=router;
