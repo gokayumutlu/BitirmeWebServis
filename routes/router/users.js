@@ -1,6 +1,7 @@
 const express = require("express");
 const mysql=require("./../../db/db").pool;
 const router = express.Router();
+const dateTime=require("node-datetime");
 
 router.get("/",(req,res)=>{
     mysql.getConnection(function(err,conn){
@@ -34,5 +35,8 @@ router.get("/ogretmen",(req,res)=>{
 });
 
 console.log("qweasd");
+const dt=dateTime.create();
+const formattedDT=dt.format("y/m/d");
+console.log(formattedDT);
 
 module.exports=router;
