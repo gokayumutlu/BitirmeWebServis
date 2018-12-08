@@ -8,6 +8,7 @@ const bodyParser=require("body-parser");
 const userRouter=require("./routes/router/users");
 const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
+const loginRouter=require("./routes/router/login");
 
 /*
 const pool=mysql.createPool({
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
 app.use("/users",userRouter);
 app.use("/signup",signupRouter);
 app.use("/deleteUser",deleteUser);
-
+app.use("/login",loginRouter);
 
 console.log("app");
 
