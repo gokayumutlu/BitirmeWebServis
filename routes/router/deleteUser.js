@@ -3,8 +3,6 @@ const mysql=require("./../../db/db").pool;
 const router = express.Router();
 const bodyParser=require("body-parser");
 
-
-
 //Belli bir kullanıcı silme
 router.delete("/:id",(req,res)=>{
     mysql.getConnection(function(err,conn){
@@ -16,17 +14,11 @@ router.delete("/:id",(req,res)=>{
             }
             else{
                 res.json(rows);
-                
             }
-            
         });
         conn.release();
     })
 });
-
-
-
-
 
 console.log("deleteUser");
 

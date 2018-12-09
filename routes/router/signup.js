@@ -3,12 +3,9 @@ const mysql=require("./../../db/db").pool;
 const hashP=require("./../../control/password/hash");
 const emailCheck=require("./../../control/email/check");
 
-//const scrypt=require("scrypt");
 const router = express.Router();
 const bodyParser=require("body-parser");
 const dateTime=require("node-datetime");
-
-
 
 router.post("/",(req,res)=>{
     const dt=dateTime.create();
@@ -35,12 +32,9 @@ router.post("/",(req,res)=>{
                     else{
                         r=0;
                     }
-                 
                 }
-
                 exists(r);
             }
-
         })
         
         function exists(exists){
@@ -57,23 +51,15 @@ router.post("/",(req,res)=>{
                         res.json(rows);
                     }
                 });
-                
             }
             else{
                 console.log("log 4");
                 res.send("kullanıcı var başka mail gir");
             }
-            
-        
         }
         conn.release();
     })
 });
-
-
-
-
-
 
 console.log("signUp");
 

@@ -4,22 +4,11 @@ const morgan=require("morgan");
 const mysql=require("mysql");
 const bodyParser=require("body-parser");
 
-
 const userRouter=require("./routes/router/users");
 const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
 const loginRouter=require("./routes/router/login");
 //const checkRouter=require("./control/email/check");
-
-/*
-const pool=mysql.createPool({
-    host:"raffle.guzelhosting.com",
-    user:"gokayumu_user1",
-    port:"3306",
-    password:"user_182274",
-    database:"gokayumu_anaokulu"
-});
-*/
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -42,5 +31,6 @@ app.use("/login",loginRouter);
 //app.use("/check",checkRouter);
 
 console.log("app");
+console.log("appppp");
 
 module.exports=app;

@@ -12,12 +12,10 @@ router.get("/",(req,res)=>{
             else{
                 res.json(rows);
             }
-            
         });
         conn.release();
     });
 });
-
 
 router.get("/ogretmen",(req,res)=>{
     mysql.getConnection(function(err,conn){
@@ -28,15 +26,11 @@ router.get("/ogretmen",(req,res)=>{
             else{
                 res.json(rows);
             }
-            
         });
         conn.release();
     })
 });
 
 console.log("users");
-//const dt=dateTime.create();
-//const formattedDT=dt.format("y/m/d");
-//console.log(formattedDT);
 
 module.exports=router;

@@ -1,6 +1,5 @@
 const mysql=require("mysql");
 
-
 const pool=mysql.createPool({
     host:"raffle.guzelhosting.com",
     user:"gokayumu_user1",
@@ -9,12 +8,7 @@ const pool=mysql.createPool({
     database:"gokayumu_anaokulu"
 });
 
-
-
-
 console.log("db");
-
-
 
 exports.pool=pool;
 
