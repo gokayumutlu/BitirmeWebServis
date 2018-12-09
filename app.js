@@ -9,6 +9,7 @@ const userRouter=require("./routes/router/users");
 const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
 const loginRouter=require("./routes/router/login");
+//const checkRouter=require("./control/email/check");
 
 /*
 const pool=mysql.createPool({
@@ -38,6 +39,7 @@ app.use("/users",userRouter);
 app.use("/signup",signupRouter);
 app.use("/deleteUser",deleteUser);
 app.use("/login",loginRouter);
+//app.use("/check",checkRouter);
 
 console.log("app");
 
