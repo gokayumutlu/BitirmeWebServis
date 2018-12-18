@@ -9,7 +9,7 @@ router.get("/",(req,res)=>{
         var email=req.body.email;
         var userSifre=req.body.sifre;
 
-        var sql="select sifre from kullanici where email=?"
+        var sql="select sifre from kullanici where email=(?)"
         conn.query(sql,email,function(err,rows){
             if(err){
                 res.sendStatus(err);
