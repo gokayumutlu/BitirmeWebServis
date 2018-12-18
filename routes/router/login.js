@@ -12,7 +12,7 @@ router.get("/",(req,res)=>{
         var sql="select sifre from kullanici where email=?"
         conn.query(sql,email,function(err,rows){
             if(err){
-                res.sendStatus(500);
+                res.sendStatus(err);
             }
             else{
                 //res.json(rows);
