@@ -3,7 +3,7 @@ const mysql=require("./../../db/db").pool;
 const router = express.Router();
 const dateTime=require("node-datetime");
 
-router.get("/ogretmen",(req,res)=>{
+router.get("/",(req,res)=>{
     mysql.getConnection(function(err,conn){
         conn.query("select * from kullanici",function(err,rows){
             if(err){
@@ -17,7 +17,7 @@ router.get("/ogretmen",(req,res)=>{
     });
 });
 
-router.get("/",(req,res)=>{
+router.get("/ogretmen",(req,res)=>{
     mysql.getConnection(function(err,conn){
         conn.query("select * from ogretmen",function(err,rows){
             if(err){
