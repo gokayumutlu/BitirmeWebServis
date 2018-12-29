@@ -8,6 +8,7 @@ const userRouter=require("./routes/router/users");
 const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
 const loginRouter=require("./routes/router/login");
+const emailTakasRouter=require("./routes/router/emailTakas");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -32,9 +33,9 @@ app.use("/users",userRouter);
 app.use("/signup",signupRouter);
 app.use("/deleteUser",deleteUser);
 app.use("/login",loginRouter);
+app.use("/emailtakas",emailTakasRouter);
 //app.use("/check",checkRouter);
 
 console.log("app");
-console.log("appppp");
 
 module.exports=app;
