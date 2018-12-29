@@ -14,7 +14,8 @@ router.get("/",(req,res)=>{
                 res.status(500).send({error: "error"})
             }
             else{
-                res.send(rows[0].email);
+                //res.json(rows[0].email);
+                res.status(200).send({email:rows[0].email});
                 console.log(rows[0].email);
             }
         })

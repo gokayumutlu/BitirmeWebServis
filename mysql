@@ -1,0 +1,6 @@
+mysql
+-root
+-your_new_password
+
+
+service mysql status
