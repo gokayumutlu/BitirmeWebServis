@@ -9,6 +9,7 @@ const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
 const loginRouter=require("./routes/router/login");
 const emailTakasRouter=require("./routes/router/emailTakas");
+const ilacTakipEkle=require("./routes/router/ilacTakibiEkle");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -34,6 +35,7 @@ app.use("/signup",signupRouter);
 app.use("/deleteUser",deleteUser);
 app.use("/login",loginRouter);
 app.use("/emailtakas",emailTakasRouter);
+app.use("/ilactakipekle",ilacTakipEkle);
 //app.use("/check",checkRouter);
 
 console.log("app");
