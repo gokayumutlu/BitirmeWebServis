@@ -10,6 +10,7 @@ const deleteUser=require("./routes/router/deleteUser");
 const loginRouter=require("./routes/router/login");
 const emailTakasRouter=require("./routes/router/emailTakas");
 const ilacTakipEkle=require("./routes/router/ilacTakibiEkle");
+const ilacTakipGetir=require("./routes/router/ilacTakipGetir");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -36,6 +37,7 @@ app.use("/deleteUser",deleteUser);
 app.use("/login",loginRouter);
 app.use("/emailtakas",emailTakasRouter);
 app.use("/ilactakipekle",ilacTakipEkle);
+app.use("/ilactakipgetir",ilacTakipGetir);
 //app.use("/check",checkRouter);
 
 console.log("app");
