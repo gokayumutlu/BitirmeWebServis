@@ -16,6 +16,7 @@
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "node-datetime": "^2.1.2",
-    "scrypt": "^6.0.3"
+    "scrypt": "^6.0.3",
+    "underscore": "^1.9.1"
   }
 }
