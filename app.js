@@ -11,6 +11,8 @@ const loginRouter=require("./routes/router/login");
 const emailTakasRouter=require("./routes/router/emailTakas");
 const ilacTakipEkle=require("./routes/router/ilacTakibiEkle");
 const ilacTakipGetir=require("./routes/router/ilacTakipGetir");
+const duyuruEkleKullanici=require("./routes/router/duyuruEkleKullanici");
+const duyuruEkleSinif=require("./routes/router/duyuruEkleSinif");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -38,6 +40,8 @@ app.use("/login",loginRouter);
 app.use("/emailtakas",emailTakasRouter);
 app.use("/ilactakipekle",ilacTakipEkle);
 app.use("/ilactakipgetir",ilacTakipGetir);
+app.use("/duyuruekullanici",duyuruEkleKullanici);
+app.use("/duyuruesinif",duyuruEkleSinif);
 //app.use("/check",checkRouter);
 
 console.log("app");
