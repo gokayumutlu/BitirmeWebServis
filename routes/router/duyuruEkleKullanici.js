@@ -4,7 +4,6 @@ const router = express.Router();
 const bodyParser=require("body-parser");
 const dateTime=require("node-datetime");
 
-//var connection=mysql.createConnection({multipleStatements: true});
 
 router.post("/",(req,res)=>{
     const dt=dateTime.create();
