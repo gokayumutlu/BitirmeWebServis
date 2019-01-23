@@ -13,6 +13,7 @@ const ilacTakipEkle=require("./routes/router/ilacTakibiEkle");
 const ilacTakipGetir=require("./routes/router/ilacTakipGetir");
 const duyuruEkleKullanici=require("./routes/router/duyuruEkleKullanici");
 const duyuruEkleSinif=require("./routes/router/duyuruEkleSinif");
+const sinifVelileriGetir=require("./routes/router/sinifVelileriGetir");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -42,6 +43,7 @@ app.use("/ilactakipekle",ilacTakipEkle);
 app.use("/ilactakipgetir",ilacTakipGetir);
 app.use("/duyuruekullanici",duyuruEkleKullanici);
 app.use("/duyuruesinif",duyuruEkleSinif);
+app.use("/sinifvgetir",sinifVelileriGetir);
 //app.use("/check",checkRouter);
 
 console.log("app");

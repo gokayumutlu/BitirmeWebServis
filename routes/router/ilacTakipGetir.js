@@ -16,7 +16,6 @@ router.get("/",(req,res)=>{
             }
             
             else{
-                
                 res.send(JSON.parse(JSON.stringify({ilacData: rows})));
                 console.log(JSON.parse(JSON.stringify(rows)));
             }
