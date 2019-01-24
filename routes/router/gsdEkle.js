@@ -9,30 +9,29 @@ router.post("/",(req,res)=>{
     const formatted=dt.format("y/m/d");
     mysql.getConnection(function(err,conn){
         var ogretmen_email=req.body.ogretmen_email;
-        var veli_email=req.body.veli_email;
-        var uyku=req.body.uyku;
-        var yemek=req.body.yemek;
-        var sql="select ogrenci_id from (ogrenci inner join veli on ogrenci.veli_id=veli.veli_id) inner join kullanici on veli.kullanici_id=kullanici.kullanici_id where kullanici.email=(?)";
-        conn.query(sql,veli_email,function(err,rows){
-            if(err){
-                res.status(500).send({error: err})
-            }
-            else{
-                //res.json(rows[0].email);
-                //res.sendStatus(200);
-                var ogrenci_id=rows[0].ogrenci_id;
-                console.log(rows[0].ogrenci_id);
-                gonder(ogrenci_id);
-            }
-        })
+        var ogrenci_id=req.body.ogrenci_id;
+        var uyku_b=req.body.uyku;
+        var yemek_b=req.body.yemek;
+        getOgretmenId(ogretmen_email,ogrenci_id,uyku_b,yemek_b);
 
-        function getOgretmenId(){
-            
+        function getOgretmenId(ogretmen_emaill,ogrenci_idd,uyku_bb,yemek_bb){
+            var sql3="select ogretmen.ogretmen_id from ogretmen inner join kullanici on ogretmen.kullanici_id=kullanici.kullanici_id where kullanici.email=(?)";
+            conn.query(sql3,ogretmen_emaill,function(err,rows){
+                if(err){
+                    res.status(500).send({error: err})
+                }
+                else{
+                    //res.json(rows[0].ogretmen_id);
+                    var ogretmen_iddd=rows[0].ogretmen_id;
+                    gonder(ogretmen_iddd,ogrenci_idd,uyku_bb,yemek_bb);
+
+                }
+            })
         }
 
-        function gonder(ogrenci_id){
-            var values=[[ogrenci_id],[ilacAdi],[doz],[desc]];
-            var sql2="insert into ";
+        function gonder(ogretmen_idddd,ogrenci_iddd,uyku_bbb,yemek_bbb){
+            var values=[[ogretmen_idddd],[ogrenci_iddd],[uyku_bbb],[yemek_bbb],[formatted]];
+            var sql2="insert into gunsonudegerlendirmesi(ogretmen_id,ogrenci_id,yemek,uyku,tarih) values(?)";
             conn.query(sql2,[values],function(err,rows){
                 if(err){
                     res.status(500).send({error : err});

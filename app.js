@@ -4,6 +4,7 @@ const morgan=require("morgan");
 const mysql=require("mysql");
 const bodyParser=require("body-parser");
 
+const deneme=require("./routes/router/deneme");
 const userRouter=require("./routes/router/users");
 const signupRouter=require("./routes/router/signup");
 const deleteUser=require("./routes/router/deleteUser");
@@ -15,6 +16,9 @@ const duyuruEkleKullanici=require("./routes/router/duyuruEkleKullanici");
 const duyuruEkleSinif=require("./routes/router/duyuruEkleSinif");
 const sinifVelileriGetir=require("./routes/router/sinifVelileriGetir");
 const gsdEkle=require("./routes/router/gsdEkle");
+const sinifOgrencileriGetir=require("./routes/router/sinifOgrencileriGetir");
+const duyuruGetir=require("./routes/router/duyuruGetir");
+const duyurularGetir=require("./routes/router/duyurularGetir");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -35,6 +39,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello, world!');
 });
 
+app.use("/deneme",deneme);
 app.use("/users",userRouter);
 app.use("/signup",signupRouter);
 app.use("/deleteUser",deleteUser);
@@ -46,6 +51,9 @@ app.use("/duyuruekullanici",duyuruEkleKullanici);
 app.use("/duyuruesinif",duyuruEkleSinif);
 app.use("/sinifvgetir",sinifVelileriGetir);
 app.use("/gsdekle",gsdEkle);
+app.use("/sinifogetir",sinifOgrencileriGetir);
+app.use("/duyurugetir",duyuruGetir);
+app.use("/duyurulargetir",duyurularGetir);
 //app.use("/check",checkRouter);
 
 console.log("app");

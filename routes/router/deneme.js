@@ -4,21 +4,13 @@ const router = express.Router();
 const bodyParser=require("body-parser");
 const dateTime=require("node-datetime");
 
-
 router.get("/",(req,res)=>{
     const dt=dateTime.create();
     const formatted=dt.format("y/m/d");
-    mysql.getConnection(function(err,conn){
-        
-        
-
-        
-
-        
-        conn.release();
-    })
+    var newDate=new Date(formatted.toString());
+    console.log(newDate);
 })
 
-console.log("gsd getir");
+console.log("deneme");
 
 module.exports=router;
