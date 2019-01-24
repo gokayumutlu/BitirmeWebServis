@@ -19,6 +19,7 @@ const gsdEkle=require("./routes/router/gsdEkle");
 const sinifOgrencileriGetir=require("./routes/router/sinifOgrencileriGetir");
 const duyuruGetir=require("./routes/router/duyuruGetir");
 const duyurularGetir=require("./routes/router/duyurularGetir");
+const ovControl=require("./routes/router/ovControl");
 //const checkRouter=require("./control/email/check");
 
 app.use(morgan("dev"));
@@ -54,6 +55,7 @@ app.use("/gsdekle",gsdEkle);
 app.use("/sinifogetir",sinifOgrencileriGetir);
 app.use("/duyurugetir",duyuruGetir);
 app.use("/duyurulargetir",duyurularGetir);
+app.use("/ovcontrol",ovControl);
 //app.use("/check",checkRouter);
 
 console.log("app");
